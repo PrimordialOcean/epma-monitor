@@ -12,8 +12,8 @@ def select_element(df, element):
     return df_element
 
 def make_plotdata(df):
-    date = df["date (yyyy/mm/dd)"]
-    intensity = df["net (count per sec)"] / df["prove_corrent (nA)"]
+    date = df["date (y/m/d)"]
+    intensity = df["net (count per sec)"] / df["probe_corrent (nA)"]
     return date, intensity
 
 # データをプロットする
@@ -79,7 +79,7 @@ def main():
         ax = fig.add_subplot(3,4,num+1)
         ax.set_title(ch_crystal)
         plot_data(ax, ch_crystal, df)
-        ax.set_xlabel("Date (yyyy/mm/dd)")
+        ax.set_xlabel("Date (y/m/d)")
         ax.set_ylabel("Intensity (cps/nA)")
         ax.legend()
     # グラフタイトルと軸ラベルが重なることを防ぐ
